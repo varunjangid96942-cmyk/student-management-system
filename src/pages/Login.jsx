@@ -23,7 +23,7 @@ function Login() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-700 flex items-center justify-center"
+        <div className="min-h-screen bg-gradient -to-r from-blue-500 via-indigo-600 to-purple-700 flex items-center justify-center"
         >
 
             <div className="bg-white shadow-xl rounded-2xl p-8 w-96">
