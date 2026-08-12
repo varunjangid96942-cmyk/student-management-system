@@ -6,14 +6,19 @@ function Login() {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const handleLogin = (e) => {
         e.preventDefault();
 
-        if (username === "admin" && password === "1234") {
-            navigate("/dashboard");
+        const trimmedUsername = username.trim();
+        const trimmedPassword = password.trim();
+
+        if (trimmedUsername === "admin" && trimmedPassword === "1234") {
+            setError("");
+            navigate("/dashboard", { replace: true });
         } else {
-            alert("Invalid Username or Password");
+            setError("Invalid Username or Password");
         }
     };
 
@@ -46,10 +51,17 @@ function Login() {
                     />
 
                     <button
+                        type="submit"
                         className="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700"
                     >
                         Login
                     </button>
+
+                    {error && (
+                        <p className="mt-4 text-center text-sm text-red-600">
+                            {error}
+                        </p>
+                    )}
 
                 </form>
 
